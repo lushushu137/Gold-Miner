@@ -1,6 +1,6 @@
 let globalSpeed = 3;
 
-let sizeMin = 10;
+let sizeMin = 20;
 let sizeMax = 50;
 let speedMin = globalSpeed * 0.1;
 let speedMax = globalSpeed * 2;
@@ -175,7 +175,7 @@ let addMoveToHook = () => {
             hookDiv.style.left = x + "px";
             hookDiv.style.top = y + "px";
             if (getGold) {
-                getGold.style.backgroundColor = 'pink';
+                getGold.style.backgroundColor = "#f12711";
                 getGold.style.left = removePx(getGold.style.left) + Math.cos(theta) * speed + 'px';
                 getGold.style.top = removePx(getGold.style.top) - Math.abs(Math.sin(theta)) * speed + 'px';
             }
@@ -184,7 +184,7 @@ let addMoveToHook = () => {
                 speed = globalSpeed;
                 if (getGold) {
                     score += (Math.floor(parseInt(getGold.getAttribute('size')) / 10) * 10);
-                    document.getElementById("score").innerHTML = "Score:"+score;
+                    document.getElementById("score").innerHTML = score;
                     let parent = document.getElementById("mine");
                     parent.removeChild(getGold);
                     getGold = null;
@@ -207,9 +207,9 @@ let addMoveToHook = () => {
             score = 0;
             target*=2;
             level += 1;
-            document.getElementById("score").innerHTML = "Score:"+score;
-            document.getElementById("level").innerHTML = "Level:"+level;
-            document.getElementById("target").innerHTML = "Target:" + target;
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("level").innerHTML = level;
+            document.getElementById("target").innerHTML = target;
             addGold(50);
         }
     }, 10
@@ -225,7 +225,7 @@ let addMoveToHook = () => {
 window.onload = () => {
     addGold(50);
     addMoveToHook();
-    document.getElementById("score").innerHTML = "Score:"+score;
-    document.getElementById("level").innerHTML = "Level:"+level;
-    document.getElementById("target").innerHTML = "Target:" + target;
+    document.getElementById("score").innerHTML = score;
+    document.getElementById("level").innerHTML = level;
+    document.getElementById("target").innerHTML = target;
 }

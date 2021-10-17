@@ -1,87 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<script src="./app.js"></script>
-<style>
+  </head>
+  <script src="./app.js"></script>
+  <style>
+    body {
+      height: 100vh;
+      background: linear-gradient(#c6ffdd, #fbd786, #f7797d);
+      background-size: cover;
+    }
     #container {
-        width: 800px;
-        height: 800px;
-        border: solid 1px;
-        display: flex;
-        flex-direction: column;
-        justify-content: stretch;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%);
     }
 
     #top {
-        height: 100px;
-        background-color: white;
-        position: relative;
-        /* display: flex;
-        justify-content: center;
-        align-items: flex-end; */
+      height: 100px;
+      position: relative;
     }
-
+    #info {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: flex;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: rgb(255, 255, 255, 0);
+    }
     #hook {
-        border-radius: 50%;
-        background-color: palevioletred;
+      border-radius: 50%;
+      background-color: #f12711;
 
-        position: absolute;
-        z-index: 10;
+      position: absolute;
+      z-index: 10;
     }
-
-    #score {
-        position: absolute;
-    }
-    #target {
-        position: absolute;
-        right: 0;
-    }
-    #level {
-        position: absolute;
-        right: 150px;
+    .info-item {
+      border-radius: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      margin: 10px;
+      font-size: 10px;
+      background-color: rgba(255, 255, 255, 0.5);
     }
 
     #rotateOrigin {
-        width: 10px;
-        height: 10px;
-        /* left: 400px;
+      width: 10px;
+      height: 10px;
+      /* left: 400px;
         top: 50px; */
-        z-index: 10;
-        position: relative;
-        background-color:palevioletred;
-;
+      z-index: 10;
+      position: relative;
+      background-color: #f12711;
     }
 
     #mine {
-        background-color: antiquewhite;
-        flex: auto;
-        position: relative;
+      background-color: rgb(255, 243, 228, 0.5);
+      border-radius: 5%;
+      flex: auto;
+      position: relative;
     }
 
     .gold {
-        background-color: gold;
-        border-radius: 20%;
+      background: #ffbb54;
+      border-radius: 20%;
     }
-</style>
+  </style>
 
-<body>
+  <body>
     <div id="container">
-        <div id="top">
-            <h1 id="score"></h1>
-            <h1 id="target"></h1>
-            <h1 id="level"></h1>
-            <div id="rotateOrigin" style="left: 400px; top: 50px;">
-                <div id="hook" style="width: 10px; height: 10px;"></div>
-            </div>
+      <div id="top">
+        <div id="info">
+          <div class="info-item">
+            <div>SCORE</div>
+            <div id="score"></div>
+          </div>
+          <div class="info-item">
+            <div>TARGET</div>
+            <div id="target"></div>
+          </div>
+          <div class="info-item">
+            <div>LEVEL</div>
+            <div id="level"></div>
+          </div>
         </div>
-        <div id="mine"></div>
-    </div>
-</body>
 
+        <div id="rotateOrigin" style="left: 400px; top: 50px">
+          <div id="hook" style="width: 10px; height: 10px"></div>
+        </div>
+      </div>
+      <div id="mine"></div>
+    </div>
+  </body>
 </html>
